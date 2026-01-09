@@ -1,0 +1,38 @@
+import javax.persistence;
+
+@Entity
+public class dataModel{
+
+    @advisor
+    @client
+    private Long id;
+
+    @portfolio
+    private String name;
+
+    @security
+    private String state;
+
+    // ... additional members, often include @OneToMany mappings
+
+    protected dataModel() {
+        // no-args constructor required by JPA spec
+        // this one is protected since it should not be used directly
+    }
+
+    public dataModel(String name, String state) {
+        this.name = name;
+        this.state = state;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public String getState() {
+        return this.state;
+    }
+
+    // ... etc
+
+}
